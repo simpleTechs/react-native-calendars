@@ -272,6 +272,8 @@ class Calendar extends Component {
             month: this.state.currentMonth,
             addMonth: this.addMonth,
             setMonth: this.setMonth,
+            minDate: this.props.minDate,
+            maxDate: this.props.maxDate,
             showIndicator: indicator,
             firstDay: this.props.firstDay,
             renderArrow: this.props.renderArrow,
@@ -280,7 +282,8 @@ class Calendar extends Component {
             weekNumbers: this.props.showWeekNumbers,
             onPressArrowLeft: this.props.onPressArrowLeft,
             onPressArrowRight: this.props.onPressArrowRight,
-            onDayPress: this.props.onDayPress
+            onDayPress: this.props.onDayPress,
+            current: this.props.current,
           })
           : <CalendarHeader
             style={this.props.headerStyle}
