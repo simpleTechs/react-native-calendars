@@ -156,6 +156,10 @@ class Calendar extends Component {
     this.updateMonth(this.state.currentMonth.clone().setMonth(month, true));
   }
 
+  setYear(year) {
+    this.setState({currentMonth: this.state.currentMonth.clone().setFullYear(year, true)})
+  }
+
   renderDay(day, id) {
     const minDate = parseDate(this.props.minDate);
     const maxDate = parseDate(this.props.maxDate);
@@ -272,6 +276,7 @@ class Calendar extends Component {
             month: this.state.currentMonth,
             addMonth: this.addMonth,
             setMonth: this.setMonth,
+            setYear: this.setYear,
             minDate: this.props.minDate,
             maxDate: this.props.maxDate,
             showIndicator: indicator,
