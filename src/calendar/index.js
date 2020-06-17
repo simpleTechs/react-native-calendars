@@ -267,9 +267,8 @@ class Calendar extends Component {
 
     return (
       <View style={[this.style.container, this.props.style]}>
-        {
-          this.props.renderHeader
-          ? this.props.renderHeader({
+        {this.props.renderHeader ? (
+          this.props.renderHeader({
             style: this.props.headerStyle,
             theme: this.props.theme,
             hideArrows: this.props.hideArrows,
@@ -289,8 +288,10 @@ class Calendar extends Component {
             onPressArrowRight: this.props.onPressArrowRight,
             onDayPress: this.props.onDayPress,
             current: this.props.current,
+            onlyNthOfMonth: this.props.onlyNthOfMonth,
           })
-          : <CalendarHeader
+        ) : (
+          <CalendarHeader
             style={this.props.headerStyle}
             theme={this.props.theme}
             hideArrows={this.props.hideArrows}
@@ -306,11 +307,11 @@ class Calendar extends Component {
             onPressArrowLeft={this.props.onPressArrowLeft}
             onPressArrowRight={this.props.onPressArrowRight}
           />
-
-        }
+        )}
 
         <View style={this.style.monthView}>{weeks}</View>
-      </View>);
+      </View>
+    );
   }
 }
 
